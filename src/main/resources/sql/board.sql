@@ -1,14 +1,15 @@
 -- 테이블 생성
-create table board_java( 
-seq number,
-id varchar2(30),
-name varchar2(15) not null,
-subject varchar2(100),
-content varchar2(500),
-logtime date);
+create table board( 
+	seq number,
+	subject VARCHAR2(100),
+	content CLOB,
+	user_id VARCHAR2(30),
+	logtime date, 
+	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
  
 -- 시퀀스 생성  
-create sequence board_java_seq
+create sequence board_seq
 	start with 1
 	increment by 1
 	nocache
