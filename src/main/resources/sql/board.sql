@@ -1,6 +1,6 @@
 -- 테이블 생성
 create table board( 
-	seq number,
+	seq number PRIMARY KEY,
 	subject VARCHAR2(100),
 	content CLOB,
 	user_id VARCHAR2(30),
