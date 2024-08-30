@@ -20,10 +20,10 @@ div.card {
 }
 
 .card #card-content {
-	width: 990px;
+	width: 1000px;
 	height: 60px;
 	border: 1px solid #5A5A5A;
-    border-radius: 10px;
+    border-radius: 5px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -55,10 +55,6 @@ div.card {
 #search-date img {
 	margin-right: 10px;
 }
-
-
-
-
 
 .cardBtn {
 	width: 100px;
@@ -94,3 +90,67 @@ div.card {
 	background-color: #5A5A5A;
 	color: #FFFFFF;
 }
+
+.board-table {
+    width: 1000px;
+	margin: 30px 50px;
+}
+
+table {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+}
+
+table tr:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+table .left {
+    text-align: left;
+}
+thead, tbody, tr {
+    display: block;
+    width: 100%;
+}
+td, th {
+    display: block;
+    float: left;
+    padding: 10px 0;
+}
+
+th {
+	letter-spacing: 3px
+}
+
+table thead {
+    border-bottom: solid 2px #5A5A5A;
+    font-weight: bold;
+}
+table tbody tr {
+    border-bottom: 1px dotted #ccc;
+}
+
+.check-size { /* **************** 체크 박스 사이즈 여기있따~ ************* */
+	transform: scale(1.7);
+	cursor: pointer;
+}
+
+.board-table table .check {
+	width: 5%;
+}
+.board-table table .no {
+    width: 11%;
+}
+.board-table table .subject {
+    width: 50%;
+}
+.board-table table .id {
+    width: 17%;
+}
+.board-table table .date {
+    width: 17%;
+}
+
