@@ -29,6 +29,7 @@ nav {
 nav #boardLogo {
 	width: 300px;
 	height: 90px;
+	margin-bottom: 100px;
 }
 
 nav #side-menu {

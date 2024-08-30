@@ -9,17 +9,17 @@
 <body>
 	<div class="userpad">
 		<nav id="snb">
-			<a href="board.html">
-				<div id="boardLogo">
+			<div id="boardLogo">
+				<a href="board.html">
 					<img src="../image/userpad3_logo.png" width="300px" height="90px" alt="userpad logo" />
-				</div>
-			</a>
+				</a>
+			</div>
 			
 			<div id="side-menu">
 				<div class="board-menu">
 					<p>글 목록</p>
 					<p>글 작성</p>
-					<p>글 삭제</p>
+					<!-- <p>글 삭제</p> -->
 				</div>
 				<div class="member-menu">
 					<p>회원정보 수정</p>
@@ -36,6 +36,27 @@
 				</a>
 			</div>
 			
+			<div class="card">
+				<div id="card-title">글 삭제 & 검색</div>
+				<div id="card-content">
+					<button id="deleteBtn" class="cardBtn">선택 삭제</button>
+					<div id="search-id">
+						<span class="search-text">ID</span>
+						<input id="id-box" class="input-box"/>
+					</div>
+					<div id="search-date">
+						<span class="search-text">날짜</span>
+						<img src ="../image/icon_down.png" alt="아래표시" />
+					</div>
+					<div id="search-title">
+						<span class="search-text">제목</span>
+						<input id="title-box" class="input-box"/>
+					</div>
+					<button id="searchBtn" class="cardBtn">검색</button>
+				</div>
+			</div>
+			
+			<div class=""></div>
 			
 			
 			
