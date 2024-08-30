@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="../image/favicon.png" type="image/png">
+<link rel="stylesheet" href="../css/signIn.css"> 
+<title>USERPAD - Sign In</title>
+</head>
+<body>
+	<div class="overlay"></div>
+    <div class="content">
+        <header>
+            <a href="../index.html">
+	            <div id="mainLogo">
+	                <img src="../image/userpad3_logo.png" width="500px" height="150px" alt="userpad logo">
+	            </div>
+			</a>
+            <div id="signUpIn">
+            	<a href="signUp.html">
+                	<button id="signUpBtn" class="signUpInBtn">Sign Up</button>
+                </a>
+                <button id="signInBtn" class="signUpInBtn">Sign In</button>
+            </div>
+        </header>
+        <div class="backGround">
+            <div class="container">
+                <h1>로그인</h1>
+                
+                <form name="form1" id="join" method="post" action="../jsp/signIn.jsp">
+                <div id="input">
+                    <div class="input-box">
+                        <div class="title"> * 아이디</div>
+                        <input class="id_input" type="text" name="user_id" placeholder="아이디를 입력해주세요"/>
+                    </div>
+                    
+                    <div class="input-box">
+                        <div class="title"> * 비밀번호</div>
+                        <input class="pw_input" type="password" name="user_pw" placeholder="비밀번호를 입력해주세요"/>
+                    </div>                
+                </div>
+                <button class="logInBtn">로그인</button>
+                </form>
+                <div class="error-container"></div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../js/auth.js"></script>
+<script type="text/javascript" src="../js/signIn.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import url("auth.css");
+
+#signUpBtn {
+	background-color: #002C4C;
+	border: 1px solid white;
+	color: #ffffff;
+}
+
+#signInBtn {
+	background-color: #ffffff;
+	color: #002C4C;
+}
+
+form {
+	width: 360px;
+	height: 290px;
+	margin: 0 auto;  
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logInBtn {
+    width: 360px;
+    height: 50px;
+    margin-top: 30px;
+    background: #FFFFFF;
+    border: 1px solid #005898;
+    border-radius: 10px;
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #005898;
+    transition: background-color 0.3s ease; 
+}
+
+.logInBtn:hover {
+	background-color: #005898;
+	color: #FFFFFF;
+}

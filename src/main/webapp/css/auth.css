@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+    height: 100vh;
+    font-family: '돋움', dotum, Helvetica, sans-serif;
+	margin: 0 auto;
+	background-image: url('../image/board_background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: overlay;
+	position: relative;
+	overflow: hidden;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5); 
+	z-index: 1;
+}
+
+.content {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	z-index: 2;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	position: relative;
+	z-index: 3;
+}
+
+#mainLogo {
+	text-align: center;
+}
+
+#signUpIn {
+    position: absolute; 
+    right: 20px; 
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.signUpInBtn {
+	width: 173px;
+	height: 50px;
+	border-radius: 10px;
+	font-family: 'Noto Sans CJK KR', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 27px;
+	text-align: center;
+	border: 1px solid #002C4C;
+	transition: background-color 0.3s ease;
+}
+
+.backGround {
+	position: relative;
+	margin: auto;
+    width: 100vw; 
+    height: 70vh; 
+    background-image: url('../image/memo_pin3.png');
+    background-repeat: no-repeat;
+    background-size: 900px 900px;
+	background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4; 
+}
+
+.container {
+    font-family: 'Noto Sans CJK KR', sans-serif;
+    font-style: normal;	
+	width: 450px;
+	height: 630px;
+	border: none;
+	padding: 20px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+	margin-top: 30px;
+    width: 360px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 47px;
+    color: #005898;
+}
+
+.input-box {
+    width: 360px;
+    height: 60px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #797979;
+    border-bottom: 1px solid #CFCFCF;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    background-color: transparent;
+}
+
+.input-box .title {
+    font-size: 16px;
+    color: #797979;
+}
+
+.input-box input {
+    border: none; 
+    background-color: transparent;
+    outline: none; 
+    padding: 5px 0; 
+    width: 100%; 
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #797979;
+}
+
+.myButton {
+    width: 173px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #005898;
+    border-radius: 10px;
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #005898;
+    transition: background-color 0.3s ease; 
+}
+
+.myButton:hover {
+	background-color: #005898;
+	color: #FFFFFF;
+}
+
+input.error-placeholder::placeholder {
+    color: #005898;
+}
+
+.error-container {
+	height: 30px;
+	color: red; 
+    margin-top: 10px;
+    font-size: 16px; 
+}
