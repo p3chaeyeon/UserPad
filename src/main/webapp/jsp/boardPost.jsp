@@ -7,32 +7,37 @@
 <%
 String subject = request.getParameter("subject");
 String content = request.getParameter("content");
-String userName = (String) session.getAttribute("userName"); // 로그인한 사용자의 이름을 세션에서 가져오기
 
+//쿠키에서 사용자 ID 읽기
 String userId = null;
-if (userName != null) {
-    UsersDAO usersDao = UsersDAO.getInstance();
-    userId = usersDao.getUserIdByName(userName);
+Cookie[] cookies = request.getCookies();
+if (cookies != null) {
+ for (Cookie cookie : cookies) {
+     if ("userId".equals(cookie.getName())) {
+         userId = cookie.getValue();
+         break;
+     }
+ }
 }
 
 StringBuilder jsonResponse = new StringBuilder();
 jsonResponse.append("{");
 
 try {
-    BoardDAO boardDao = BoardDAO.getInstance();
-    
-    // 게시물 추가
-    boardDao.insertBoard(subject, content, userId);
+ BoardDAO boardDao = BoardDAO.getInstance();
+ 
+ // 글 작성
+ boardDao.insertBoard(subject, content, userId);
 
-    jsonResponse.append("\"success\": true");
+ jsonResponse.append("\"success\": true");
 } catch (Exception e) {
-    e.printStackTrace();
-    jsonResponse.append("\"success\": false,");
-    jsonResponse.append("\"message\": \"게시물 작성 중 오류가 발생했습니다.\"");
+ e.printStackTrace();
+ jsonResponse.append("\"success\": false,");
+ jsonResponse.append("\"message\": \"게시물 작성 중 오류가 발생했습니다.\"");
 } finally {
-    jsonResponse.append("}");
-    response.setContentType("application/json");
-    response.getWriter().print(jsonResponse.toString());
+ jsonResponse.append("}");
+ response.setContentType("application/json");
+ response.getWriter().print(jsonResponse.toString());
 }
 
 %>

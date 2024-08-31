@@ -135,30 +135,4 @@ public class UsersDAO {
         }
         return user;
     }
-
-    /** boardPost.html */
-    // 사용자 ID 조회; 글 작성을 위함
-    public String getUserIdByName(String name) {
-        Connection con = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        String userId = null;
-        String sql = "SELECT id FROM users WHERE name = ?";
-
-        try {
-            con = getConnection();
-            pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, name);
-            rs = pstmt.executeQuery();
-
-            if (rs.next()) {
-                userId = rs.getString("id");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            closeAll(con, pstmt, rs);
-        }
-        return userId;
-    }
 }
