@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"
-import="java.util.*, com.bit.userpad.dao.BoardDAO, com.bit.userpad.bean.BoardDTO, com.bit.userpad.dao.CommentDAO, com.bit.userpad.bean.CommentDTO" %>
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.bit.userpad.dao.BoardDAO"  %>
+<%@ page import="com.bit.userpad.bean.BoardDTO" %>
+<%@ page import="com.bit.userpad.dao.CommentDAO"  %>
+<%@ page import="com.bit.userpad.bean.CommentDTO"  %>
 
 <%
     int postNo = Integer.parseInt(request.getParameter("no"));

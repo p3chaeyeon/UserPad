@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.sql.Statement;
 import com.bit.userpad.bean.BoardDTO;
 
 public class BoardDAO {
@@ -54,7 +54,8 @@ public class BoardDAO {
 		}
 	}
 	
-	// board.html
+	/** board.html */
+	// 글 목록 가져오기
 	public List<BoardDTO> getAllBoards() {
 	    List<BoardDTO> list = new ArrayList<>();
 	    String sql = "SELECT seq AS no, subject, content, user_id, logtime FROM board ORDER BY logtime DESC"; 
@@ -82,7 +83,8 @@ public class BoardDAO {
 	    return list;
 	}
 
-	// boardDetail.html
+	/**  boardDetail.html */
+	// 글 세부사항 가져오기
 	public BoardDTO getBoardByNo(int no) {
         BoardDTO board = null;
         String sql = "SELECT seq AS no, subject, content, user_id, logtime FROM board WHERE seq = ?";
@@ -110,6 +112,23 @@ public class BoardDAO {
         return board;
     }
 	
-	
+	/** boardPost.html */
+    // 글 작성
+	public void insertBoard(String subject, String content, String userId) {
+	    String sql = "INSERT INTO board (seq, subject, content, user_id, logtime) VALUES (board_seq.NEXTVAL, ?, ?, ?, SYSDATE)";
+
+	    try {
+	        getConnection();
+	        pstmt = con.prepareStatement(sql);
+	        pstmt.setString(1, subject);
+	        pstmt.setString(2, content);
+	        pstmt.setString(3, userId);
+	        pstmt.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        closeAll();
+	    }
+	}	
 
 }
