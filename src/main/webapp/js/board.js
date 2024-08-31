@@ -1,34 +1,6 @@
 // board.js
 $(function() {
-	$('.menu-list').hover(
-	    function() {
-	        // 현재 항목 스타일 변경
-	        $(this).css({
-	            'color': '#F1AF23',
-	            'font-weight': 'bold'
-	        });
-
-	        // 다른 메뉴 항목들의 스타일 복구
-	        $('.menu-list').not(this).css({
-	            'color': 'white',
-	            'font-weight': 'normal'
-	        });
-	    },
-	    function() {
-	        // 현재 항목 스타일 원래대로 복구
-	        $(this).css({
-	            'color': 'white',
-	            'font-weight': 'normal'
-	        });
-
-	        // 항상 "글 목록" 항목은 강조 스타일로 유지
-	        $('a[href="board.html"]').find('p').css({
-	            'color': '#F1AF23',
-	            'font-weight': 'bold'
-	        });
-	    }
-	);
-		
+    // AJAX 요청을 통해 데이터 로드 및 테이블 업데이트
     $.ajax({
         type: 'GET',
         url: '../jsp/board.jsp', // board.jsp를 호출하여 데이터를 가져옴
@@ -40,7 +12,7 @@ $(function() {
             $.each(data.items, function(index, item) {
                 let tr = `
                     <tr>
-                        <td class="check"><input class="check-size" type="checkbox"/></td>
+                        <td class="check"><input class="board-list-check" type="checkbox"/></td>
                         <td class="no">${item.no}</td>
                         <td class="subject">${item.subject}</td>
                         <td class="id">${item.userId}</td>
@@ -52,5 +24,23 @@ $(function() {
         error: function(e) {
             console.log(e);
         }
+    });
+
+    // 전체 선택 / 전체 해제 이벤트를 동적으로 바인딩
+    $(document).on('change', '#all_check', function() {
+        let isChk = $(this).is(':checked');
+        console.log(isChk);
+        
+        // 전체 선택 체크박스 상태에 따라 모든 체크박스 상태 변경
+        $('.board-list-check').prop('checked', isChk);
+    });
+
+    // 개별 체크박스 상태에 따른 전체 선택 체크박스 상태 업데이트
+    $(document).on('change', '.board-list-check', function() {
+        let total = $('.board-list-check').length; // 전체 체크박스 수
+        let checked = $('.board-list-check:checked').length; // 체크된 체크박스 수
+
+        // 체크된 체크박스 수가 전체 체크박스 수와 같으면 전체 선택 체크박스 체크
+        $('#all_check').prop('checked', total === checked);
     });
 });

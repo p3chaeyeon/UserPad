@@ -131,7 +131,7 @@ table tbody tr {
     border-bottom: 1px dotted #ccc;
 }
 
-.check-size { /* **************** 체크 박스 사이즈 여기있따~ ************* */
+.check-size, .board-list-check { /* **************** 체크 박스 사이즈 여기있따~ ************* */
 	transform: scale(1.7);
 	cursor: pointer;
 }
