@@ -5,7 +5,7 @@ create table board(
 	content CLOB NOT NULL,
 	user_id VARCHAR2(30),
 	logtime date, 
-	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE SET NULL
 );
  
 -- 시퀀스 생성  

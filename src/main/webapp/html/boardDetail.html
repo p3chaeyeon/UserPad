@@ -38,13 +38,24 @@
             
             <div class="post-detail">
                 <h1 id="post-title"></h1>
+                
                 <div class="post-info">
                     <span class="post-id">ID :<span id="post-id"></span></span>
                     <span class="post-date">작성일 :<span id="post-date"></span></span>
                 </div>
+                
                 <div class="post-content">
                     <p id="post-body"></p>
                 </div>
+                
+                <div class="comment-content">
+                	<div id="comment-list"></div>
+                	<div id="post-content">
+                		<textarea id="new-comment" placeholder="댓글을 작성하세요..."></textarea>
+            			<button id="submit-comment">작성</button>
+                	</div>
+                </div>
+                
 			    <div class="button-container">
 			    	<button class="back-btn" onclick="window.location.href='board.html';">목록</button>
 			    </div>
