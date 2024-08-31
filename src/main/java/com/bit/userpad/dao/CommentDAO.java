@@ -63,7 +63,6 @@ public class CommentDAO {
             pstmt.setInt(1, postNo);
             rs = pstmt.executeQuery();
             while (rs.next()) {
-                // CommentDTO 생성 시 comment_id 제외
                 CommentDTO comment = new CommentDTO(
                     rs.getString("comment_content"),  
                     rs.getString("user_id"),         

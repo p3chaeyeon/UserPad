@@ -23,6 +23,6 @@ public class CommentDTO {
     private Date logDate;
     
     public CommentDTO(String content, String userId, Date logDate) {
-        this(0, content, 0, userId, logDate); // id와 postNo에 기본값을 설정
+        this(0, content, 0, userId, logDate); // id와 postNo에 기본값 설정
     }
 }
