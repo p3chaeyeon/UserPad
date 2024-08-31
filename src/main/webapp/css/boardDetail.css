@@ -135,12 +135,14 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 20px; 
+    gap: 10px;
 }
 
-.back-btn {
-    display: inline-block;
+.del-post-btn, .back-btn {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     padding: 10px 30px;
-    width: 105px;
     background: #f9f9f9;
     border: 1px solid #005898;
     color: #005898;
@@ -149,9 +151,11 @@
     font-size: 18px;
     text-align: center;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.back-btn:hover {
+.del-post-btn:hover, .back-btn:hover {
     background: #005898;
     color: white;
+    cursor: pointer;
 }

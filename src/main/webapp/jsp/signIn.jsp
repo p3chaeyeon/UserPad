@@ -18,18 +18,18 @@
         try {
             user = usersDAO.getUserByIdPassword(userId, userPwd);
             if (user != null) {
-             	// 로그인 성공 시 쿠키에 사용자 이름 저장
-                Cookie userCookie = new Cookie("userName", user.getName());
-                userCookie.setPath("/");
-                userCookie.setMaxAge(60 * 60 * 24);
-                response.addCookie(userCookie);
-                
+                // 로그인 성공 시 쿠키에 사용자 이름 저장
+                Cookie userNameCookie = new Cookie("userName", user.getName());
+                userNameCookie.setPath("/"); // 쿠키의 경로 설정
+                userNameCookie.setMaxAge(60 * 60 * 24); // 쿠키의 유효 기간 설정 (1일)
+                response.addCookie(userNameCookie);
+
                 // 로그인 성공 시 쿠키에 사용자 ID 저장
-                Cookie userIdCookie = new Cookie("userId", user.getId()); // 쿠키 생성
-                userCookie.setPath("/"); // 쿠키의 경로 설정
-                userIdCookie.setMaxAge(60 * 60 * 24); // 쿠키의 유효 기간 설정 (1일)
-                response.addCookie(userIdCookie); // 응답에 쿠키 추가
-                
+                Cookie userIdCookie = new Cookie("userId", user.getId());
+                userIdCookie.setPath("/"); 
+                userIdCookie.setMaxAge(60 * 60 * 24);
+                response.addCookie(userIdCookie); 
+
                 status = "success";
             } else {
                 message = "아이디 또는 비밀번호가 잘못되었습니다.";

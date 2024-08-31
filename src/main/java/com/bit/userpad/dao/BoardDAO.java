@@ -112,6 +112,28 @@ public class BoardDAO {
         return board;
     }
 	
+    // 게시글 삭제
+    public boolean deleteBoard(int no) {
+        String sql = "DELETE FROM board WHERE seq = ?";
+        boolean success = false;
+
+        try {
+            getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                success = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeAll();
+        }
+        return success;
+    }
+	
 	/** boardPost.html */
     // 글 작성
 	public void insertBoard(String subject, String content, String userId) {
@@ -130,5 +152,6 @@ public class BoardDAO {
 	        closeAll();
 	    }
 	}	
+
 
 }
