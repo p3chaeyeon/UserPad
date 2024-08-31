@@ -109,6 +109,7 @@
     box-sizing: border-box;
     resize: vertical;
     margin-right: 10px;
+    resize: none; /* 크기 조절 핸들 제거 */
 }
 
 #submit-comment {

@@ -42,7 +42,7 @@
 }
 
 #post-form textarea {
-    resize: vertical;
+    resize: none; /* 크기 조절 핸들 제거 */
 }
 
 .button-container {

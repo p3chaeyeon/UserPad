@@ -148,27 +148,6 @@ h1 {
     color: #797979;
 }
 
-.myButton {
-    width: 173px;
-    height: 50px;
-    background: #FFFFFF;
-    border: 1px solid #005898;
-    border-radius: 10px;
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    text-align: center;
-    color: #005898;
-    transition: background-color 0.3s ease; 
-}
-
-.myButton:hover {
-	background-color: #005898;
-	color: #FFFFFF;
-}
-
 input.error-placeholder::placeholder {
     color: #005898;
 }
