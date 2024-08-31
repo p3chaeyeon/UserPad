@@ -1,33 +1,5 @@
 // boardDetail.js
-
 $(function() {
-    // URL에서 'no' 파라미터 가져오기
-    const urlParams = new URLSearchParams(window.location.search);
-    const postNo = urlParams.get('no');
-	
-    if (postNo) {
-        // AJAX 요청을 통해 게시물의 상세 데이터 가져오기
-        $.ajax({
-            type: 'GET',
-            url: `../jsp/boardDetail.jsp?no=${postNo}`, // 특정 게시물의 데이터를 가져옴
-            dataType: 'json',
-            success: function(data) {
-                console.log(JSON.stringify(data));
-
-                // 데이터를 해당 HTML 요소에 삽입
-                $('#post-title').text(data.subject);
-                $('#post-id').text(data.userId);
-                $('#post-date').text(data.logDate);
-                $('#post-body').text(data.content);
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    } else {
-        console.error("게시물 번호가 URL에 없습니다.");
-    }
-	
 	$('.menu-list').hover(
 	    function() { // 마우스를 올렸을 때
 	        $(this).css({
@@ -42,4 +14,45 @@ $(function() {
 	        });
 	    }
 	);
+	
+    // URL에서 'no' 파라미터 가져오기
+	const urlParams = new URLSearchParams(window.location.search);
+	const postNo = urlParams.get('no');
+    
+    if (postNo) {
+        // AJAX 요청 - 게시물 데이터 및 댓글 데이터
+        $.ajax({
+            type: 'GET',
+            url: `../jsp/boardDetail.jsp?no=${postNo}`,
+            dataType: 'json',
+            success: function(data) {
+                $('#post-title').text(data.subject);
+                $('#post-id').text(data.userId);
+                $('#post-date').text(data.logDate);
+                $('#post-body').text(data.content);
+
+                const $commentList = $('#comment-list');
+                $commentList.empty();
+                if (data.comments.length > 0) {
+                    data.comments.forEach(comment => {
+                        $commentList.append(`
+                            <div class="comment">
+                                <div class="list-user-id">${comment.userId}</div>
+                                <div class="list-content">${comment.content}</div>
+                                <div class="list-date">${new Date(comment.logDate).toLocaleDateString()}</div>
+                            </div>
+                        `);
+                    });
+                    $commentList.show();
+                } else {
+                    $commentList.hide();
+                }
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    } else {
+        console.error("게시물 번호가 URL에 없습니다.");
+    }
 });

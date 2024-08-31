@@ -11,6 +11,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* 게시물 */
 .post-detail h1 {
     font-size: 24px;
     color: #005898;
@@ -43,10 +44,10 @@
     color: #333;
     line-height: 1.6;
 }
+/* 게시물 */
 
-
-
-
+/* 댓글 */
+/* 댓글 컨테이너 */
 .comment-content {
     margin-top: 30px;
     padding: 15px;
@@ -56,36 +57,50 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* 댓글 리스트 */
 #comment-list {
     margin-bottom: 20px;
+    padding: 0;
+    font-size: 16px;
 }
 
+/* 댓글 항목 */
 .comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
 }
 
-.comment:last-child {
-    border-bottom: none;
+/* 사용자 ID */
+.list-user-id {
+    flex: 2;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
-.comment-content p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-    margin: 0;
+/* 댓글 내용 */
+.list-content {
+    flex: 5;
+    margin-right: 10px;
 }
 
-#post-content {
-    margin-top: 20px;
+/* 댓글 작성 날짜 */
+.list-date {
+    flex: 2;
+    color: #888;
+}
+
+/* 댓글 작성 폼 */
+#post-comment {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-textarea#new-comment {
-    flex: 9; 
+#new-comment {
+    flex: 9;
     height: 80px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -96,8 +111,8 @@ textarea#new-comment {
     margin-right: 10px;
 }
 
-button#submit-comment {
-    flex: 1; 
+#submit-comment {
+    flex: 1;
     width: 80px;
     height: 80px;
     padding: 0;
@@ -110,9 +125,10 @@ button#submit-comment {
     transition: background 0.3s ease;
 }
 
-button#submit-comment:hover {
+#submit-comment:hover {
     background: #003d6a;
 }
+/* 댓글 */
 
 .button-container {
     display: flex;
@@ -123,7 +139,7 @@ button#submit-comment:hover {
 .back-btn {
     display: inline-block;
     padding: 10px 30px;
-    width: 105px;
+    width: 115px;
     background: #f9f9f9;
     border: 1px solid #005898;
     color: #005898;
