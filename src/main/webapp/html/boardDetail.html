@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../image/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/boardDetail.css">
+    <title>USERPAD - Post Detail</title>
+</head>
+<body>
+    <div class="userpad">
+        <nav id="snb">
+            <div id="boardLogo">
+                <a href="board.html">
+                    <img src="../image/userpad3_logo.png" width="300px" height="90px" alt="userpad logo" />
+                </a>
+            </div>
+            
+            <div id="side-menu">
+                <div class="board-menu">
+                    <a href="board.html"><p class="menu-list">글 목록</p></a>
+                    <a href="boardPost.html"><p class="menu-list">글 작성</p></a>
+                    <!-- <p>글 삭제</p> -->
+                </div>
+                <div class="member-menu">
+                    <a href="editProfile.html"><p class="menu-list">회원정보 수정</p></a>
+                    <a href="withdraw.html"><p class="menu-list">회원 탈퇴</p></a>
+                </div>
+            </div>
+        </nav>
+        
+        <main>
+            <div id="header">
+                <div id="user"><span id="user-name">__________</span> 님</div>
+                <a href="../index.html">
+                    <button class="logOutBtn">Log Out</button>
+                </a>
+            </div>
+            
+            <div class="post-detail">
+                <h1 id="post-title">제목</h1>
+                <div class="post-info">
+                    <span class="post-id">ID :<span id="post-id">123</span></span>
+                    <span class="post-date">작성일 :<span id="post-date">2024-08-31</span></span>
+                </div>
+                <div class="post-content">
+                    <p id="post-body">여기에 게시물 내용이 들어갑니다.</p>
+                </div>
+                <a href="board.html" class="back-btn" aria-label="Go to Board List">목록으로 돌아가기</a>
+            </div>
+        </main>
+    </div>
+    
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/boardDetail.js"></script>
+</body>
+</html>

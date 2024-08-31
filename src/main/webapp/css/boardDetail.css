@@ -1,0 +1,69 @@
+/* boardDetail.css */
+@charset "UTF-8";
+@import url("main.css");
+
+.board-menu > a:first-child > p {
+    color: #F1AF23;
+    font-weight: bold;
+}
+
+.post-detail {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 100px auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-detail h1 {
+    font-size: 24px;
+    color: #005898;
+    margin-bottom: 20px;
+}
+
+.post-info {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #333;
+}
+
+.post-info span {
+	display: block;
+    margin-bottom: 5px;
+}
+
+.post-id, .post-date {
+	width: 200px;
+	letter-spacing: 3px;	
+}
+
+#post-id, #post-date {
+	display: inline;
+	margin-left: 5px;
+}
+
+.post-content {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f9f9f9;
+    border : 1px solid #005898;
+    color: #005898;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #005898;
+    color: white;
+}
