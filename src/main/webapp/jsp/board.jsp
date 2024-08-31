@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.bit.userpad.dao.BoardDAO"  %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.bit.userpad.dao.BoardDAO" %>
 <%@ page import="com.bit.userpad.bean.BoardDTO" %>
 
 <%
+    // 날짜 포맷 설정
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // 원하는 형식으로 변경 가능
+
     // 데이터베이스에서 데이터 조회
     BoardDAO dao = BoardDAO.getInstance();
     List<BoardDTO> boardList = dao.getAllBoards();
@@ -17,10 +21,10 @@
         BoardDTO board = boardList.get(i);
         jsonBuilder.append("{")
                    .append("\"no\":").append(board.getNo()).append(",")
-                   .append("\"subject\":\"").append(board.getSubject()).append("\",")
-                   .append("\"content\":\"").append(board.getContent()).append("\",")
-                   .append("\"userId\":\"").append(board.getUserId()).append("\",")
-                   .append("\"logDate\":\"").append(board.getLogDate()).append("\"")
+                   .append("\"subject\":\"").append(board.getSubject().replaceAll("[\\\"]", "\\\\\"")).append("\",")
+                   .append("\"content\":\"").append(board.getContent().replaceAll("[\\\"]", "\\\\\"").replaceAll("[\\n]", "\\\\n")).append("\",")
+                   .append("\"userId\":\"").append(board.getUserId().replaceAll("[\\\"]", "\\\\\"")).append("\",")
+                   .append("\"logDate\":\"").append(dateFormat.format(board.getLogDate())).append("\"")
                    .append("}");
         if (i < boardList.size() - 1) {
             jsonBuilder.append(",");

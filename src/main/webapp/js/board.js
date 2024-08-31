@@ -1,30 +1,33 @@
-// board.js
 $(function() {
     // AJAX 요청을 통해 데이터 로드 및 테이블 업데이트
     $.ajax({
         type: 'GET',
-        url: '../jsp/board.jsp', // board.jsp를 호출하여 데이터를 가져옴
+        url: '../jsp/board.jsp', // board.jsp 파일 경로 확인
         dataType: 'json',
         success: function(data) {
-            console.log(JSON.stringify(data));
+            console.log("AJAX 요청 성공:", data); // 데이터 출력 확인
 
-            // 데이터 배열을 반복하면서 테이블에 행을 추가
-            $.each(data.items, function(index, item) {
-                let tr = `
-                    <tr>
-                        <td class="check"><input class="board-list-check" type="checkbox"/></td>
-                        <td class="no">${item.no}</td>
-                        <td class="subject">
-                            <a href="boardDetail.html?no=${item.no}">${item.subject}</a>
-                        </td>
-                        <td class="id">${item.userId}</td>
-                        <td class="date">${item.logDate}</td>
-                    </tr>`;
-                $('tbody').append(tr);
-            });
+            if (data.items && data.items.length > 0) {
+                $.each(data.items, function(index, item) {
+                    let tr = `
+                        <tr>
+                            <td class="check"><input class="board-list-check" type="checkbox"/></td>
+                            <td class="no">${item.no}</td>
+                            <td class="subject">
+                                <a href="boardDetail.html?no=${item.no}">${item.subject}</a>
+                            </td>
+                            <td class="id">${item.userId}</td>
+                            <td class="date">${item.logDate}</td>
+                        </tr>`;
+                    $('tbody').append(tr);
+                });
+            } else {
+                console.log("No items found in response.");
+            }
         },
-        error: function(e) {
-            console.log(e);
+        error: function(xhr, status, error) {
+            console.log("AJAX 요청 오류:", status, error);
+            console.log("응답 텍스트:", xhr.responseText);
         }
     });
 

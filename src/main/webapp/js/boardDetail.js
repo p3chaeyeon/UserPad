@@ -29,7 +29,7 @@ $(function() {
                 $('#post-title').text(data.subject);
                 $('#post-id').text(data.userId);
                 $('#post-date').text(data.logDate);
-                $('#post-body').text(data.content);
+                $('#post-body').html(data.content.replace(/\n/g, '<br>')); // 줄 바꿈을 <br>로 변환
 
                 const $commentList = $('#comment-list');
                 $commentList.empty();
@@ -38,7 +38,7 @@ $(function() {
                         $commentList.append(`
                             <div class="comment">
                                 <div class="list-user-id">${comment.userId}</div>
-                                <div class="list-content">${comment.content}</div>
+                                <div class="list-content">${comment.content.replace(/\n/g, '<br>')}</div> <!-- 줄 바꿈을 <br>로 변환 -->
                                 <div class="list-date">${new Date(comment.logDate).toLocaleDateString()}</div>
                             </div>
                         `);
