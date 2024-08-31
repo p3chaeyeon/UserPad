@@ -6,3 +6,70 @@
     color: #F1AF23;
     font-weight: bold;
 }
+
+.post-form-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 100px auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-form-container h1 {
+    font-size: 24px;
+    color: #005898;
+    margin-bottom: 20px;
+}
+
+#post-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#post-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#post-form input[type="text"],
+#post-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#post-form textarea {
+    resize: vertical;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; 
+    gap: 10px;
+}
+
+.post-btn, .back-btn {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 10px 30px;
+    background: #f9f9f9;
+    border: 1px solid #005898;
+    color: #005898;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.post-btn:hover, .back-btn:hover {
+    background: #005898;
+    color: white;
+    cursor: pointer;
+}

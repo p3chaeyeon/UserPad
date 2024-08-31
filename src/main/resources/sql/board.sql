@@ -1,8 +1,8 @@
 -- 테이블 생성
 create table board( 
 	seq number PRIMARY KEY,
-	subject VARCHAR2(100),
-	content CLOB,
+	subject VARCHAR2(100) NOT NULL,
+	content CLOB NOT NULL,
 	user_id VARCHAR2(30),
 	logtime date, 
 	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE

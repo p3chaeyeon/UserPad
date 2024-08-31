@@ -7,6 +7,11 @@
     font-weight: bold;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 div.card {
 	width: 1000px;
 	height: 100px;
@@ -56,6 +61,10 @@ div.card {
 }
 
 .cardBtn {
+	padding: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 	width: 100px;
     height: 40px;
     background: #FFFFFF;
@@ -131,7 +140,7 @@ table tbody tr {
     border-bottom: 1px dotted #ccc;
 }
 
-.check-size, .board-list-check { /* **************** 체크 박스 사이즈 여기있따~ ************* */
+.check-size, .board-list-check {
 	transform: scale(1.7);
 	cursor: pointer;
 }

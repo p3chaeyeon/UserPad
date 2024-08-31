@@ -56,6 +56,10 @@ nav .member-menu {
 	padding-top: 10px;
 }
 
+nav .menu-list {
+    font-weight: normal;
+    color: white;
+}
 
 main {
 	flex: 1; 
@@ -73,8 +77,14 @@ main {
     border-bottom: 2px solid #005898;
 }
 
+#header a {
+	text-decoration: none;
+}
 
 #header #user, .logOutBtn {
+	display: flex;
+    align-items: center;
+    justify-content: center;
     width: 173px;
     height: 50px;
     background: #FFFFFF;
@@ -84,14 +94,11 @@ main {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 27px;
     text-align: center;
     line-height: 50px;
     color: #005898;
     transition: background-color 0.3s ease; 
 }
-
-
 
 #header #user:hover, .logOutBtn:hover {
 	background-color: #005898;

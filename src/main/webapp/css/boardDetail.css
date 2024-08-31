@@ -2,11 +2,6 @@
 @charset "UTF-8";
 @import url("main.css");
 
-.board-menu > a:first-child > p {
-    color: #F1AF23;
-    font-weight: bold;
-}
-
 .post-detail {
     padding: 20px;
     max-width: 1000px;
@@ -49,17 +44,22 @@
     line-height: 1.6;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; 
+}
+
 .back-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 30px;
     background: #f9f9f9;
-    border : 1px solid #005898;
+    border: 1px solid #005898;
     color: #005898;
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
     text-align: center;
-    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 

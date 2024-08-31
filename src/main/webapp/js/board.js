@@ -1,3 +1,4 @@
+// board.js
 $(function() {
     // AJAX 요청을 통해 데이터 로드 및 테이블 업데이트
     $.ajax({

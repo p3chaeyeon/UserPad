@@ -54,6 +54,7 @@ public class BoardDAO {
 		}
 	}
 	
+	// board.html
 	public List<BoardDTO> getAllBoards() {
 	    List<BoardDTO> list = new ArrayList<>();
 	    String sql = "SELECT seq AS no, subject, content, user_id, logtime FROM board ORDER BY logtime DESC"; 
@@ -81,5 +82,34 @@ public class BoardDAO {
 	    return list;
 	}
 
+	// boardDetail.html
+	public BoardDTO getBoardByNo(int no) {
+        BoardDTO board = null;
+        String sql = "SELECT seq AS no, subject, content, user_id, logtime FROM board WHERE seq = ?";
+
+        try {
+            getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                board = new BoardDTO(
+                    rs.getInt("no"),
+                    rs.getString("subject"),
+                    rs.getString("content"),
+                    rs.getString("user_id"),
+                    rs.getDate("logtime")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeAll();
+        }
+        return board;
+    }
+	
+	
 
 }

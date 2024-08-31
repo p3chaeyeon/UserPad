@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*, com.bit.userpad.dao.BoardDAO, com.bit.userpad.bean.BoardDTO" %>
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" 
+import="java.util.*, com.bit.userpad.dao.BoardDAO, com.bit.userpad.bean.BoardDTO" %>
+
 <%
     // 데이터베이스에서 데이터 조회
     BoardDAO dao = BoardDAO.getInstance();
