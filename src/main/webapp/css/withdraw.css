@@ -23,7 +23,7 @@
     margin-bottom: 20px;
 }
 
-.withdraw-form-container p {
+.withdraw-form-container > p {
 	margin-bottom: 30px;
 }
 
@@ -101,4 +101,8 @@ div.withdraw-input label:last-child {
 .withdrawBtn:hover {
     background: #FF6B6B;
     color: white;
+}
+
+.message-container {
+	margin: 10px 0;
 }
