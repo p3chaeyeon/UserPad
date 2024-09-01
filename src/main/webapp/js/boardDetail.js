@@ -15,6 +15,13 @@ $(function() {
         }
     );
 
+	$('#new-comment').on('focus', function() {
+	    $(this).attr('data-placeholder', $(this).attr('placeholder'));
+	    $(this).attr('placeholder', ''); // placeholder를 빈 문자열로 설정
+	}).on('blur', function() {
+	    $(this).attr('placeholder', $(this).attr('data-placeholder')); // 원래 placeholder 값으로 복원
+	});
+	
     // 쿠키에서 사용자 ID를 가져오는 함수
     function getCookie(name) {
         let cookieName = name + "=";
