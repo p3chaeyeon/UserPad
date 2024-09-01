@@ -138,7 +138,7 @@
     gap: 10px;
 }
 
-.del-post-btn, .back-btn {
+.edit-post-btn, .del-post-btn, .back-btn {
     display: flex; 
     align-items: center; 
     justify-content: center; 
@@ -154,7 +154,7 @@
     cursor: pointer;
 }
 
-.del-post-btn:hover, .back-btn:hover {
+.edit-post-btn:hover, .del-post-btn:hover, .back-btn:hover {
     background: #005898;
     color: white;
     cursor: pointer;

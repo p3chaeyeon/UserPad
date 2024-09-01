@@ -68,11 +68,13 @@ $(function() {
                     let currentUserId = getCookie("userId");
                     let postOwnerId = data.userId;
 
-                    // 사용자 ID가 게시물 작성자 ID와 같지 않으면 '삭제' 버튼 숨기기
+                    // 사용자 ID가 게시물 작성자 ID와 같지 않으면 '수정', 삭제' 버튼 숨기기
                     if (currentUserId !== postOwnerId) {
-                        $('.del-post-btn').hide();
+						$('.edit-post-btn').hide();
+						$('.del-post-btn').hide();
                     } else {
-                        $('.del-post-btn').show();
+						$('.edit-post-btn').show();
+						$('.del-post-btn').show();
                     }
                 } else if (data && data.status === 'error') {
                     // 에러 응답 처리 및 리디렉션
