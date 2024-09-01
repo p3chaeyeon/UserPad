@@ -135,4 +135,33 @@ public class UsersDAO {
         }
         return user;
     }
+    
+    /** withdraw.html */
+    // 사용자 삭제
+    public boolean deleteUserByIdAndPassword(String id, String password) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        boolean result = false;
+        String sql = "DELETE FROM users WHERE id = ? AND pwd = ?";
+
+        try {
+            con = getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, id);
+            pstmt.setString(2, password);
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                result = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeAll(con, pstmt, null);
+        }
+        return result;
+    }
+
+    
+    
 }
