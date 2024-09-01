@@ -69,6 +69,10 @@
     align-items: center;
 }
 
+div.withdraw-input {
+	padding: 20px !important;  
+}
+
 div.withdraw-input label {
 	margin-bottom:10px;
 }
