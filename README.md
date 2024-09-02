@@ -1,5 +1,5 @@
 # UserPad
-
+![index.html](resources/screenshot/index.html.png)
 
 
 **UserPad**는 사용자들이 자유롭게 의견을 나누고 정보를 공유할 수 있는 웹 기반 게시판 시스템입니다. 이 시스템은 사용자가 다양한 주제로 게시글을 작성하고, 댓글을 통해 활발한 토론을 할 수 있게 도와줍니다. 본 시스템은 커뮤니티 사이트, 고객 지원 포럼, 팀 프로젝트 협업 공간 등 다양한 용도로 활용될 수 있습니다.
@@ -13,92 +13,89 @@
 - **버전 관리**: GitHub
 
 
+## 📰 Database
+
+- **USERS**: 회원 정보 테이블
+  ```sql
+   -- 테이블 생성
+    create table user (
+   	 name VARCHAR2(20) NOT NULL,
+   	 id VARCHAR2(30) PRIMARY KEY, -- 무결성 제약조건, not null
+   	 pwd VARCHAR2(50) NOT NULL,
+   	 email VARCHAR2(50) NOT NULL,
+   	 phone VARCHAR2(20) UNIQUE
+    );
+  ```
+- **BOARD**: 게시글 정보 테이블
+    ```sql
+   -- 테이블 생성
+   create table board( 
+      seq number PRIMARY KEY,
+      subject VARCHAR2(100) NOT NULL,
+      content CLOB NOT NULL,
+      user_id VARCHAR2(30),
+      logtime date, 
+      FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE SET NULL
+   );
+    
+   -- 시퀀스 생성  
+   create sequence board_seq
+      start with 1
+      increment by 1
+      nocache
+      nocycle;
+     ```
+- **COMMENTS**:  댓글 정보 테이블
+    ```sql
+   -- 테이블 생성
+   CREATE TABLE comments (
+       comment_id NUMBER PRIMARY KEY,
+       board_seq NUMBER,
+       comment_content CLOB NOT NULL,
+       user_id VARCHAR2(30),
+       comment_date DATE,
+       FOREIGN KEY (board_seq) REFERENCES board(seq) ON DELETE CASCADE,
+       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+   );
+   
+   -- 시퀀스 생성
+   CREATE SEQUENCE comment_seq
+       START WITH 1
+       INCREMENT BY 1
+       NOCACHE
+       NOCYCLE;
+     ```
+
+
 ## ✨ 주요 기능
 
 1. **회원 가입**
-   - **정보**: 이름, 아이디, 비밀번호, 이메일, 전화번호
-   - **SQL 테이블**:
-     ```sql
-     -- 테이블 생성
-     create table user (
-    	 name VARCHAR2(20) NOT NULL,
-    	 id VARCHAR2(30) PRIMARY KEY, -- 무결성 제약조건, not null
-    	 pwd VARCHAR2(50) NOT NULL,
-    	 email VARCHAR2(50) NOT NULL,
-    	 phone VARCHAR2(20) UNIQUE
-     );
-     ```
+   ![signUp.html](resources/screenshot/signUp.html.png)
+   - **id 중복체크**: USERS 테이블의 id 가 있는지 확인
 
 2. **로그인**
-   - **입력**: 아이디, 비밀번호
-
-<!-- 3. **회원 정보 수정**
-   - **수정**: 현재 비밀번호와 일치해야 수정 가능 -->
+  ![signIn.html](resources/screenshot/signIn.html.png)
+    - **인증**: 아이디 & 비밀번호 입력
 
 3. **회원 탈퇴**
+   ![withdraw.html](resources/screenshot/withdraw.html.png)
    - **인증**: 회원 비밀번호 입력
 
 4. **게시글 작성**
-   - **정보**: 제목, 내용
-   - **SQL 테이블**:
-     ```sql
-      -- 테이블 생성
-      create table board( 
-      	seq number PRIMARY KEY,
-      	subject VARCHAR2(100) NOT NULL,
-      	content CLOB NOT NULL,
-      	user_id VARCHAR2(30),
-      	logtime date, 
-      	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE SET NULL
-      );
-       
-      -- 시퀀스 생성  
-      create sequence board_seq
-      	start with 1
-      	increment by 1
-      	nocache
-      	nocycle;
-     ```
+   ![boardPost.html](resources/screenshot/boardPost.html.png)
+
 
 5. **게시글 조회**
-   - **전체 조회** 및 제목 클릭하여 상세 조회
-   - **SQL 쿼리 예시**:
-     ```sql
-     SELECT * FROM movies;
-     SELECT * FROM movies WHERE title = :title OR code = :code;
-     ```
+   - **전체 조회**
+     ![board.html](resources/screenshot/board.html.png)
+   - **상세 조회**
+      ![boardDetail.html](resources/screenshot/boardDetail.html.png)
 
 6. **게시글 삭제**
-   - **항목**: 제목, 감독, 장르, 개봉일, 시놉시스
-   - **SQL 쿼리 예시**:
-     ```sql
-     UPDATE movies
-     SET title = :title, director = :director, genre = :genre, release_date = :release_date, synopsis = :synopsis
-     WHERE code = :code;
-     ```
+   ![boardDetail.html](resources/screenshot/boardDetail.html.png)
 
-8. **댓글 조회**
+7. **댓글 조회**
    - **항목**: 아이디, 댓글 내용, 댓글 작성 날짜
-   - **SQL 쿼리 예시**:
-     ```sql
-      -- 테이블 생성
-      CREATE TABLE comments (
-          comment_id NUMBER PRIMARY KEY,
-          board_seq NUMBER,
-          comment_content CLOB NOT NULL,
-          user_id VARCHAR2(30),
-          comment_date DATE,
-          FOREIGN KEY (board_seq) REFERENCES board(seq) ON DELETE CASCADE,
-          FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
-      );
-      
-      -- 시퀀스 생성
-      CREATE SEQUENCE comment_seq
-          START WITH 1
-          INCREMENT BY 1
-          NOCACHE
-          NOCYCLE;
-     ```
 
 
 
