@@ -94,12 +94,11 @@
       ![boardDetail.html](src/main/resources/screenshot/boardDetail.html.png)
 
 6. **게시글 삭제**
-   ![boardDetail.html](src/main/resources/screenshot/boardDetail.html.png)
+   ![boardDetail.html](src/main/resources/screenshot/deletePost.png)
 
 7. **댓글 조회**
-   - **항목**: 아이디, 댓글 내용, 댓글 작성 날짜
-
-
+   ![boardDetail.html](src/main/resources/screenshot/comments.png)
+  
 
 
 ## 🤝 기여
