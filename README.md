@@ -72,29 +72,29 @@
 ## ✨ 주요 기능
 
 1. **회원 가입**
-   ![signUp.html](src/main/resources/screenshot/screenshot/signUp.html.png)
+   ![signUp.html](src/main/resources/screenshot/signUp.html.png)
    - **id 중복체크**: USERS 테이블의 id 가 있는지 확인
 
 2. **로그인**
-  ![signIn.html](src/main/resources/screenshot/screenshot/signIn.html.png)
+  ![signIn.html](src/main/resources/screenshot/signIn.html.png)
     - **인증**: 아이디 & 비밀번호 입력
 
 3. **회원 탈퇴**
-   ![withdraw.html](src/main/resources/screenshot/screenshot/withdraw.html.png)
+   ![withdraw.html](src/main/resources/screenshot/withdraw.html.png)
    - **인증**: 회원 비밀번호 입력
 
 4. **게시글 작성**
-   ![boardPost.html](src/main/resources/screenshot/screenshot/boardPost.html.png)
+   ![boardPost.html](src/main/resources/screenshot/boardPost.html.png)
 
 
 5. **게시글 조회**
    - **전체 조회**
-     ![board.html](src/main/resources/screenshot/screenshot/board.html.png)
+     ![board.html](src/main/resources/screenshot/board.html.png)
    - **상세 조회**
-      ![boardDetail.html](src/main/resources/screenshot/screenshot/boardDetail.html.png)
+      ![boardDetail.html](src/main/resources/screenshot/boardDetail.html.png)
 
 6. **게시글 삭제**
-   ![boardDetail.html](src/main/resources/screenshot/screenshot/boardDetail.html.png)
+   ![boardDetail.html](src/main/resources/screenshot/boardDetail.html.png)
 
 7. **댓글 조회**
    - **항목**: 아이디, 댓글 내용, 댓글 작성 날짜
