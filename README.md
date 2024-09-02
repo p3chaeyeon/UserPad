@@ -1,8 +1,8 @@
 # UserPad
-![index.html](resources/screenshot/index.html.png)
-
+![index.html](src/main/resources/screenshot/index.html.png)
 
 **UserPad**는 사용자들이 자유롭게 의견을 나누고 정보를 공유할 수 있는 웹 기반 게시판 시스템입니다. 이 시스템은 사용자가 다양한 주제로 게시글을 작성하고, 댓글을 통해 활발한 토론을 할 수 있게 도와줍니다. 본 시스템은 커뮤니티 사이트, 고객 지원 포럼, 팀 프로젝트 협업 공간 등 다양한 용도로 활용될 수 있습니다.
+
 
 ## 🛠️ 개발 환경
 
@@ -11,6 +11,7 @@
 - **DBMS**: Oracle Database
 - **SQL 툴**: SQL Developer
 - **버전 관리**: GitHub
+
 
 
 ## 📰 Database
@@ -67,35 +68,37 @@
      ```
 
 
+
 ## ✨ 주요 기능
 
 1. **회원 가입**
-   ![signUp.html](resources/screenshot/signUp.html.png)
+   ![signUp.html](src/main/resources/screenshot/screenshot/signUp.html.png)
    - **id 중복체크**: USERS 테이블의 id 가 있는지 확인
 
 2. **로그인**
-  ![signIn.html](resources/screenshot/signIn.html.png)
+  ![signIn.html](src/main/resources/screenshot/screenshot/signIn.html.png)
     - **인증**: 아이디 & 비밀번호 입력
 
 3. **회원 탈퇴**
-   ![withdraw.html](resources/screenshot/withdraw.html.png)
+   ![withdraw.html](src/main/resources/screenshot/screenshot/withdraw.html.png)
    - **인증**: 회원 비밀번호 입력
 
 4. **게시글 작성**
-   ![boardPost.html](resources/screenshot/boardPost.html.png)
+   ![boardPost.html](src/main/resources/screenshot/screenshot/boardPost.html.png)
 
 
 5. **게시글 조회**
    - **전체 조회**
-     ![board.html](resources/screenshot/board.html.png)
+     ![board.html](src/main/resources/screenshot/screenshot/board.html.png)
    - **상세 조회**
-      ![boardDetail.html](resources/screenshot/boardDetail.html.png)
+      ![boardDetail.html](src/main/resources/screenshot/screenshot/boardDetail.html.png)
 
 6. **게시글 삭제**
-   ![boardDetail.html](resources/screenshot/boardDetail.html.png)
+   ![boardDetail.html](src/main/resources/screenshot/screenshot/boardDetail.html.png)
 
 7. **댓글 조회**
    - **항목**: 아이디, 댓글 내용, 댓글 작성 날짜
+
 
 
 
