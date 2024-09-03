@@ -1,3 +1,4 @@
+-- Oracle
 -- 테이블 생성
  create table user (
 	 name VARCHAR2(20) NOT NULL,

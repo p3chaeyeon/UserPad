@@ -1,3 +1,4 @@
+-- Oracle
 -- 테이블 생성
 CREATE TABLE comments (
     comment_id NUMBER PRIMARY KEY,

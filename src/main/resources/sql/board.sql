@@ -1,3 +1,4 @@
+-- Oracle
 -- 테이블 생성
 create table board( 
 	seq number PRIMARY KEY,
