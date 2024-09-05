@@ -7,7 +7,7 @@
 ## 🛠️ 개발 환경
 
 - **프로그래밍 언어**: HTML, CSS, JavaScript
-- **IDE**: Eclipse
+- **IDE**: Eclipse (jdk-17)
 - **DBMS**: Oracle Database
 - **SQL 툴**: SQL Developer
 - **버전 관리**: GitHub
