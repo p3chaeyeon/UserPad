@@ -29,7 +29,7 @@ $(document).ready(function() {
         });
     });
 
-    // validateForm 함수 정의 (전체 폼 유효성 검사, 이 함수는 submit 시에만 호출됩니다)
+    // validateForm 함수 정의 (전체 폼 유효성 검사, 이 함수는 submit 시에만 호출됨)
     window.validateForm = function($form) {
         let valid = true;
         let errorMessage = "";
