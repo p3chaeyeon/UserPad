@@ -97,7 +97,7 @@
    ![boardDetail.html](src/main/resources/screenshot/deletePost.png)
 
 7. **댓글 조회**
-   ![boardDetail.html](src/main/resources/screenshot/comments.png)
+   ![boardDetail.html](src/main/resources/screenshot/comment.png)
   
 
 
