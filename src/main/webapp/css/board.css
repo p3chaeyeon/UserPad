@@ -1,4 +1,4 @@
-/* board.css */
+/* UserPad/src/main/webapp/css/board.css */
 @charset "UTF-8";
 @import url("main.css");
 
@@ -161,3 +161,29 @@ table tbody tr {
     width: 17%;
 }
 
+#page-block {
+   width: 900px;
+   margin: 30px auto;
+   font-size: 13pt;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 7px;
+}
+
+#currentPaging {
+   background-color: #e5e7ea;
+   border-radius: 5px;
+   padding: 5px 8px;
+   font-weight: bold;
+}
+
+#paging {
+   border-radius: 5px;
+   padding: 5px 8px;
+}
+
+span.page-button:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}

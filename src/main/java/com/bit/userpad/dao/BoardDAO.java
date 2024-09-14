@@ -1,4 +1,4 @@
-// src/main/java/com/bit/userpad/dao/BoardDAO.java
+// UserPad/src/main/java/com/bit/userpad/dao/BoardDAO.java
 package com.bit.userpad.dao;
 
 import java.sql.Connection;
@@ -56,18 +56,26 @@ public class BoardDAO {
 	
 	/** board.html */
 	// 글 목록 가져오기
-	public List<BoardDTO> getAllBoards() {
+	public List<BoardDTO> getAllBoards(int startNum, int endNum) {
 	    List<BoardDTO> list = new ArrayList<>();
-	    String sql = "SELECT seq AS no, subject, content, user_id, logtime FROM board ORDER BY logtime DESC"; 
-
+	    
+	    String sql = """
+			    SELECT * FROM (
+			    SELECT ROWNUM rn, tt.* 
+			    FROM (SELECT * FROM board ORDER BY seq DESC) tt
+			    ) WHERE rn >= ? AND rn <= ?
+			""";
+	    
 	    try {
 	        getConnection();
 	        pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startNum);
+			pstmt.setInt(2, endNum);
 	        rs = pstmt.executeQuery();
 
 	        while (rs.next()) {
 	            BoardDTO dto = new BoardDTO(
-	                rs.getInt("no"),
+	                rs.getInt("seq"),
 	                rs.getString("subject"),
 	                rs.getString("content"),
 	                rs.getString("user_id"),
@@ -77,12 +85,33 @@ public class BoardDAO {
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
+	        list = null;
 	    } finally {
 	        closeAll();
 	    }
 	    return list;
 	}
 
+	// 글 개수
+	public int getTotalA() {
+		int totalA = 0;
+		
+		String sql = "SELECT COUNT(*) FROM board";
+		try {
+	        getConnection();
+	        pstmt = con.prepareStatement(sql);
+	        rs = pstmt.executeQuery();
+			if (rs.next()) {
+				totalA = rs.getInt(1); // 첫 번째 열(여기서는 COUNT(*))의 값을 가져옴
+			}
+		} catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        closeAll();
+	    }
+		return totalA;
+	}
+	
 	/**  boardDetail.html */
 	// 글 세부사항 가져오기
 	public BoardDTO getBoardByNo(int no) {

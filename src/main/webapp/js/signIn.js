@@ -53,7 +53,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.status === 'success') {
-                    window.location.href = '../html/board.html'; // 성공 시 리다이렉트
+                    window.location.href = '../html/board.html?pg=1'; // 성공 시 리다이렉트
                 } else {
                     $('.error-container').html(response.message); // 에러 메시지 표시
                     $idInput.val('');
