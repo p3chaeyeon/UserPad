@@ -15,3 +15,5 @@ create sequence board_seq
 	increment by 1
 	nocache
 	nocycle;
+
+	-- user_id 가 null 이어도 조회 가능해야함
