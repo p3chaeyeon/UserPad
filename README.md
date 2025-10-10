@@ -10,7 +10,7 @@
 - **IDE**: Eclipse (jdk-17)
 - **DBMS**: Oracle Database
 - **SQL 툴**: SQL Developer
-- **버전 관리**: GitHub
+- **버전 관리**: Git
 
 
 
